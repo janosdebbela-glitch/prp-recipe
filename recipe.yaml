@@ -35,16 +35,9 @@ tasks:
 
   - action: connect_database
 
-  - action: download_file
-    url: https://github.com/esx-framework/esx-core/releases/latest/download/esx_core.zip
-    path: ./tmp/esx_core.zip
-    
-  - action: unzip
-    src: ./tmp/esx_core.zip
-    dest: ./tmp/esx_core
-    
-  - action: move_path
-    src: ./tmp/esx_core/esx_core
+  - action: download_github
+    src: https://github.com/esx-framework/esx-core
+    ref: main
     dest: ./tmp/core
 
   - action: query_database
