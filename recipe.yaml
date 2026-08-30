@@ -1,9 +1,9 @@
 $engine: 3
 $onesync: on
-name: fivemland_recipe
+name: prp
 version: 1.3.0
-author: Csoki&Adam
-description: FiveM Land - ESX Legacy Recipe (Updated)
+author: readyadam
+description: rp
 
 tasks:
   - action: download_github
