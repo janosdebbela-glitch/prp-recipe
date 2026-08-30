@@ -1,7 +1,7 @@
 $engine: 4
 $meta:
   name: ESX Magyar + Ox Inv + SD-Phone
-  version: 1.0.0
+  version: 1.0.1
   author: Gemini
   description: Alap ESX Legacy magyar nyelven, ox_inventory és sd-phone konfigurációval.
 
@@ -26,11 +26,9 @@ tasks:
     ref: main
     dest: ./resources/[esx]
 
-  # Mappa létrehozása a fizetős sd-phone számára
-  - action: waste_time
-    seconds: 1
-  - action: command
-    command: mkdir -p ./resources/[phone]/sd-phone
+  # Mappa létrehozása a telefon számára
+  - action: ensure_dir
+    path: ./resources/[phone]/sd-phone
 
   - action: connect_database
   - action: query_database
@@ -86,5 +84,4 @@ tasks:
       ensure ox_inventory
 
       # --- Telefon ---
-      # Töltsd fel az sd-phone fájljait a resources/[phone]/sd-phone mappába!
       ensure sd-phone
